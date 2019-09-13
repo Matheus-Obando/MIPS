@@ -1,16 +1,17 @@
 MIPS (32 bits)
 
-R type format:  OP_CODE     RS      RT      RD      SHIFT       FUNCT
-Bits:           6           5       5       5       5           6
+R type format:  OP_CODE     RS      RT     RD      SHIFT   FUNCT
+Bits:           6           5       5      5       5       6
 
-I type format:  OP_CODE     RS      RT      IMM
-Bits:           6           5       5       16
+I type format:  OP_CODE     RS      RT     IMM
+Bits:           6           5       5      16
 
 J type format:  OP_CODE     PSEUDO_ADDRESS
 Bits:           6           26
 
 
-ADDRESS     CODE        BASIC                      SOURCE                   INSTRUCTION_TYPE        OP_CODE   OP_FORMAT 
+ADDRESS     CODE        BASIC                      SOURCE                   INSTRUCTION_TYPE        INSTRUCTION_FORMAT 
+
 0x00400000  0x3c011001  lui $1,0x00001001     22   lw $s0, order            I                       001111    00000   00001   0001000000000001   
 0x00400004  0x8c3000c4  lw $16,0x000000c4($1)                               I                       100011    00001   10000   0000000011000100
 0x00400008  0x02100018  mult $16,$16          24   mult $s0, $s0            R                       000000    10000   10000   00000   00000   011000
