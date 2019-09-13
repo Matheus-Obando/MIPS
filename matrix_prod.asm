@@ -43,14 +43,12 @@ start_j:
 beq $t1, $s0, end_j
 li $t2, 0
 
-# Line:
-#mul $t6, $t0, $s0
+# Line element:
 mult $t0, $s0
 mflo $t6
 add $t3, $t3, $t6
 
-# Column:
-#mul $t6, $t1, $s0
+# Column element:
 mult $t1, $s0
 mflo $t6
 add $t4, $t4, $t6
@@ -68,7 +66,6 @@ lw $s3, 0($t3)
 lw $s4, 0($t4)
 
 # Multiply the two values and storage on a new register
-#mul $s5, $s4, $s3
 mult $s4, $s3
 mflo $s5
 add $a0, $a0, $s5
