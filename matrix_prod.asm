@@ -20,7 +20,9 @@ order: .word 4 # Square matrices order (4X4)
 _main:
 
 lw $s0, order
-mul $s1, $s0, $s0
+#mul $s1, $s0, $s0
+mult $s0, $s0
+mflo $s1
  
 multiply:
 
@@ -42,11 +44,15 @@ beq $t1, $s0, end_j
 li $t2, 0
 
 # Line:
-mul $t6, $t0, $s0
+#mul $t6, $t0, $s0
+mult $t0, $s0
+mflo $t6
 add $t3, $t3, $t6
 
 # Column:
-mul $t6, $t1, $s0
+#mul $t6, $t1, $s0
+mult $t1, $s0
+mflo $t6
 add $t4, $t4, $t6
 
 start_k:
@@ -62,7 +68,9 @@ lw $s3, 0($t3)
 lw $s4, 0($t4)
 
 # Multiply the two values and storage on a new register
-mul $s5, $s4, $s3
+#mul $s5, $s4, $s3
+mult $s4, $s3
+mflo $s5
 add $a0, $a0, $s5
 addi $t3, $t3, 4
 add $t4, $t4, $s1
