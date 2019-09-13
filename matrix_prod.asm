@@ -20,7 +20,6 @@ order: .word 4 # Square matrices order (4X4)
 _main:
 
 lw $s0, order
-#mul $s1, $s0, $s0
 mult $s0, $s0
 mflo $s1
  
