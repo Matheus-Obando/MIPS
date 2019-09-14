@@ -10,7 +10,7 @@ J type format:  OP_CODE     PSEUDO_ADDRESS
 Bits:           6           26
 
 
-ADDRESS     CODE        BASIC                   SOURCE                        INSTRUCTION_TYPE        INSTRUCTION_FORMAT 
+ADDRESS     CODE        BASIC                   SOURCE                   INSTRUCTION_TYPE        INSTRUCTION_FORMAT 
 
 0x00400000  0x3c011001  lui $1,0x00001001       lw $s0, order            I                       001111    00000   00001   0001000000000001   
 0x00400004  0x8c3000c4  lw $16,0x000000c4($1)                            I                       100011    00001   10000   0000000011000100
